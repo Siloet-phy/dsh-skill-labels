@@ -1,32 +1,39 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="技能中文标签 dsh-skill-labels">
   <title>dsh-skill-labels</title>
-  <desc>鲸鱼娘抱着一枚「中」字：技能列表的每个技能都带上中文小标题。</desc>
+  <desc>蓝色圆角底板上是一个大而清晰的白色「中」字；底边一只白色鲸鱼娘探出头，头顶两侧竖着小尾鳍。</desc>
   <defs>
-    <linearGradient id="badge" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#7B93FF"/>
-      <stop offset="1" stop-color="#3A54E0"/>
+    <linearGradient id="badge" x1="0.12" y1="0" x2="0.88" y2="1">
+      <stop offset="0" stop-color="#8FA8FF"/>
+      <stop offset="0.52" stop-color="#5B78F2"/>
+      <stop offset="1" stop-color="#334FD2"/>
     </linearGradient>
   </defs>
 
   <!-- 底板 -->
-  <rect x="16" y="16" width="480" height="480" rx="112" ry="112" fill="url(#badge)"/>
+  <rect x="16" y="16" width="480" height="480" rx="120" ry="120" fill="url(#badge)"/>
 
-  <!-- 鲸鱼娘 + 「中」 -->
-  <g transform="translate(248,281) scale(1.06) translate(-256,-281)">
-    <!-- 鲸鱼娘：两条尾鳍当耳朵 -->
-    <ellipse cx="178" cy="170" rx="48" ry="25" transform="rotate(-32 178 170)" fill="#FFFFFF"/>
-    <ellipse cx="314" cy="170" rx="48" ry="25" transform="rotate(32 314 170)" fill="#FFFFFF"/>
+  <!-- 鲸鱼娘：头顶两侧竖起的尾鳍 -->
+  <ellipse cx="184" cy="424" rx="31" ry="13" transform="rotate(-54 184 424)" fill="#FFFFFF"/>
+  <ellipse cx="328" cy="424" rx="31" ry="13" transform="rotate(54 328 424)" fill="#FFFFFF"/>
 
-    <!-- 鲸鱼娘：尾巴 -->
-    <ellipse cx="410" cy="258" rx="54" ry="27" transform="rotate(-30 410 258)" fill="#FFFFFF"/>
-    <ellipse cx="410" cy="326" rx="54" ry="27" transform="rotate(30 410 326)" fill="#FFFFFF"/>
+  <!-- 鲸鱼娘：底边探出的圆脑袋 -->
+  <path d="M 158 500 C 158 446 200 420 256 420 C 312 420 354 446 354 500 Z" fill="#FFFFFF"/>
 
-    <!-- 鲸鱼娘：身体（头） -->
-    <path d="M 118 300 C 118 214 176 174 248 174 C 320 174 372 214 372 298 C 372 358 322 388 246 388 C 170 388 118 358 118 300 Z" fill="#FFFFFF"/>
+  <!-- 眼睛 -->
+  <ellipse cx="216" cy="462" rx="13" ry="15" fill="#1B2A6B"/>
+  <ellipse cx="296" cy="462" rx="13" ry="15" fill="#1B2A6B"/>
+  <circle cx="212" cy="457" r="5" fill="#FFFFFF"/>
+  <circle cx="292" cy="457" r="5" fill="#FFFFFF"/>
 
-    <!-- 「中」：口 -->
-    <rect x="196" y="231" width="100" height="100" rx="12" ry="12" fill="none" stroke="#3A54E0" stroke-width="32"/>
-    <!-- 「中」：竖 -->
-    <rect x="230" y="195" width="32" height="180" rx="10" ry="10" fill="#3A54E0"/>
-  </g>
+  <!-- 腮红 -->
+  <ellipse cx="183" cy="480" rx="16" ry="8.5" fill="#FFA6C9" opacity="0.92"/>
+  <ellipse cx="329" cy="480" rx="16" ry="8.5" fill="#FFA6C9" opacity="0.92"/>
+
+  <!-- 微笑 -->
+  <path d="M 245 484 Q 256 492 267 484" fill="none" stroke="#1B2A6B" stroke-width="6" stroke-linecap="round"/>
+
+  <!-- 「中」：竖（上下出头，占画面高度约 64%） -->
+  <rect x="232" y="64" width="48" height="330" rx="14" ry="14" fill="#FFFFFF"/>
+  <!-- 「中」：口 -->
+  <rect x="196" y="170" width="120" height="120" rx="14" ry="14" fill="none" stroke="#FFFFFF" stroke-width="48"/>
 </svg>
