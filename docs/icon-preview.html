@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<title>dsh-skill-labels · 图标各尺寸预览</title>
+<style>
+  body { margin:0; padding:20px; font-family:"Segoe UI",system-ui,sans-serif; background:#0f1115; color:#e6e8ee; }
+  p.label { font-size:13px; color:#8b93a1; margin:0 0 10px; }
+  .row { display:flex; align-items:flex-end; gap:24px; margin:12px 0 24px; }
+  .cell { text-align:center; font-size:12px; color:#9aa3b2; }
+  .light { background:#f6f7fb; color:#333; padding:16px; border-radius:12px; }
+  .light .cell { color:#666; }
+  .card { display:flex; align-items:center; gap:8px; background:#191c22; border:1px solid #262b34; border-radius:10px; padding:10px 12px; width:290px; }
+  .card img { width:20px; height:20px; flex:none; }
+  .card b { font-size:13px; } .card span { font-size:11px; color:#8b93a1; }
+  nav { font-size:12px; color:#8b93a1; margin-bottom:14px; }
+  nav a { color:#7c9cff; }
+</style>
+</head>
+<body>
+  <nav>打开本文件即可在浏览器里核对图标在各尺寸下的可读性。改完 <a href="../icon.svg">icon.svg</a> 刷新页面即可。</nav>
+
+  <p class="label">深色界面（DSH 默认）· 验收重点：24px 与 20px 仍能认出「中」</p>
+  <div class="row">
+    <div class="cell"><img src="../icon.svg" width="192" height="192" alt="icon"><div>192</div></div>
+    <div class="cell"><img src="../icon.svg" width="96" height="96" alt="icon"><div>96</div></div>
+    <div class="cell"><img src="../icon.svg" width="64" height="64" alt="icon"><div>64</div></div>
+    <div class="cell"><img src="../icon.svg" width="48" height="48" alt="icon"><div>48</div></div>
+    <div class="cell"><img src="../icon.svg" width="32" height="32" alt="icon"><div>32</div></div>
+    <div class="cell"><img src="../icon.svg" width="24" height="24" alt="icon"><div>24</div></div>
+    <div class="cell"><img src="../icon.svg" width="20" height="20" alt="icon"><div>20</div></div>
+  </div>
+
+  <p class="label">插件管理器列表里的实际效果</p>
+  <div class="card"><img src="../icon.svg" alt="icon"><div><b>技能中文标签</b><br><span>为技能目录中的每项技能添加中文标题前缀…</span></div></div>
+
+  <div class="light" style="margin-top:22px">
+    <p class="label">浅色界面</p>
+    <div class="row">
+      <div class="cell"><img src="../icon.svg" width="96" height="96" alt="icon"><div>96</div></div>
+      <div class="cell"><img src="../icon.svg" width="32" height="32" alt="icon"><div>32</div></div>
+      <div class="cell"><img src="../icon.svg" width="20" height="20" alt="icon"><div>20</div></div>
+    </div>
+  </div>
+</body>
+</html>
