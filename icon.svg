@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="技能中文标签 dsh-skill-labels">
   <title>dsh-skill-labels</title>
-  <desc>蓝色圆角底板上是一个大而清晰的白色「中」字；底边一只白色鲸鱼娘探出头，头顶两侧竖着小尾鳍。</desc>
+  <desc>蓝色圆角底板上是一个大而清晰的白色「中」字；底边一只白色鲸鱼娘探出头，左右两条尾鳍像双马尾，头顶冒着水花。</desc>
   <defs>
     <linearGradient id="badge" x1="0.12" y1="0" x2="0.88" y2="1">
       <stop offset="0" stop-color="#8FA8FF"/>
@@ -12,28 +12,33 @@
   <!-- 底板 -->
   <rect x="16" y="16" width="480" height="480" rx="120" ry="120" fill="url(#badge)"/>
 
-  <!-- 鲸鱼娘：头顶两侧竖起的尾鳍 -->
-  <ellipse cx="184" cy="424" rx="31" ry="13" transform="rotate(-54 184 424)" fill="#FFFFFF"/>
-  <ellipse cx="328" cy="424" rx="31" ry="13" transform="rotate(54 328 424)" fill="#FFFFFF"/>
+  <!-- 喷出的水花 -->
+  <circle cx="198" cy="380" r="9" fill="#FFFFFF" opacity="0.95"/>
+  <circle cx="178" cy="356" r="7" fill="#FFFFFF" opacity="0.9"/>
+  <circle cx="163" cy="332" r="5" fill="#FFFFFF" opacity="0.85"/>
+
+  <!-- 鲸鱼娘：左右两条尾鳍，像双马尾 -->
+  <ellipse cx="154" cy="484" rx="44" ry="17" transform="rotate(-17 154 484)" fill="#FFFFFF"/>
+  <ellipse cx="358" cy="484" rx="44" ry="17" transform="rotate(17 358 484)" fill="#FFFFFF"/>
 
   <!-- 鲸鱼娘：底边探出的圆脑袋 -->
-  <path d="M 158 500 C 158 446 200 420 256 420 C 312 420 354 446 354 500 Z" fill="#FFFFFF"/>
+  <path d="M 144 500 C 144 438 192 408 256 408 C 320 408 368 438 368 500 Z" fill="#FFFFFF"/>
 
   <!-- 眼睛 -->
-  <ellipse cx="216" cy="462" rx="13" ry="15" fill="#1B2A6B"/>
-  <ellipse cx="296" cy="462" rx="13" ry="15" fill="#1B2A6B"/>
-  <circle cx="212" cy="457" r="5" fill="#FFFFFF"/>
-  <circle cx="292" cy="457" r="5" fill="#FFFFFF"/>
+  <ellipse cx="216" cy="456" rx="13" ry="15" fill="#1B2A6B"/>
+  <ellipse cx="296" cy="456" rx="13" ry="15" fill="#1B2A6B"/>
+  <circle cx="212" cy="451" r="5" fill="#FFFFFF"/>
+  <circle cx="292" cy="451" r="5" fill="#FFFFFF"/>
 
   <!-- 腮红 -->
-  <ellipse cx="183" cy="480" rx="16" ry="8.5" fill="#FFA6C9" opacity="0.92"/>
-  <ellipse cx="329" cy="480" rx="16" ry="8.5" fill="#FFA6C9" opacity="0.92"/>
+  <ellipse cx="182" cy="476" rx="17" ry="9" fill="#FFA6C9" opacity="0.92"/>
+  <ellipse cx="330" cy="476" rx="17" ry="9" fill="#FFA6C9" opacity="0.92"/>
 
   <!-- 微笑 -->
-  <path d="M 245 484 Q 256 492 267 484" fill="none" stroke="#1B2A6B" stroke-width="6" stroke-linecap="round"/>
+  <path d="M 244 480 Q 256 489 268 480" fill="none" stroke="#1B2A6B" stroke-width="6" stroke-linecap="round"/>
 
-  <!-- 「中」：竖（上下出头，占画面高度约 64%） -->
-  <rect x="232" y="64" width="48" height="330" rx="14" ry="14" fill="#FFFFFF"/>
-  <!-- 「中」：口 -->
-  <rect x="196" y="170" width="120" height="120" rx="14" ry="14" fill="none" stroke="#FFFFFF" stroke-width="48"/>
+  <!-- 「中」：竖（上下各出头约 1/4 字高） -->
+  <rect x="231" y="64" width="50" height="330" rx="12" ry="12" fill="#FFFFFF"/>
+  <!-- 「中」：口（宽大于高，左右两侧比旧版展开约 36%） -->
+  <rect x="173" y="166" width="166" height="126" rx="16" ry="16" fill="none" stroke="#FFFFFF" stroke-width="46"/>
 </svg>
