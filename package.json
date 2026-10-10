@@ -1,7 +1,7 @@
 {
   "name": "dsh-skill-labels",
-  "version": "0.1.0",
-  "description": "给 DeepSeek Harness 技能列表的每个技能加上中文小标题，一眼看懂它到底能干啥（html-ppt →【写PPT】）。",
+  "version": "0.2.0",
+  "description": "给 DeepSeek Harness 技能列表的每项技能加中文标签；标签表随时可改，还能让 AI 直接帮你补全未标注的技能。",
   "keywords": [
     "dsh-plugin",
     "deepseek-harness",
@@ -14,7 +14,9 @@
     "zh-cn",
     "i18n",
     "localization",
-    "labels"
+    "labels",
+    "captions",
+    "agent-tool"
   ],
   "license": "MIT",
   "author": "Siloet-phy",

@@ -35,11 +35,18 @@ This plugin prepends a 4–7 character Chinese caption to each skill description
 
 - **Caption first** — a 4–7 character caption is placed before the description; the default template is `【caption】original description` and is configurable via `format`.
 - **Both surfaces covered** — the model-facing catalog and the `/` menu read the same data, so both change together.
-- **Hot-updatable labels** — label tables are re-read when their file modification time changes; no restart or reinstall required.
-- **Four-level override** — built-in table, bundled table, user table, and row config, applied in ascending priority; the user table survives upgrades.
+- **A living label table** — four override levels (built-in, bundled, user, row config); label files are re-read when their modification time changes, with no restart or reinstall.
+- **The agent can label skills for you** — a bundled `skill_labels` tool lets the model list what is still unlabelled and write captions into your user table. No comparable plugin does this.
+- **Not limited to Chinese** — a caption is just a prefix string: emoji, short English names, or numbering work too (`🎨 draw`, `excel`, `① daily`).
 - **Zero dependencies, zero configuration** — no third-party packages, no peer dependencies, no build step, enabled by default once installed.
 - **Unregistered skills untouched** — a skill absent from every table is left exactly as it was; a single debug line records it in the host log.
 - **Safe to remove** — uninstalling restores the wrapped registry methods and returns the catalog to its previous state.
+
+## How it differs
+
+Two comparable plugins existed before this one (as of 2026-10-11): [dsh-skill-source-label](https://github.com/lingyired/dsh-skill-source-label) marks where a skill comes from (project / personal / bundled), and [dsh-skill-manager-ytxue](https://github.com/YTxue/dsh-skill-manager-ytxue) is a skill management panel (enable/disable, batch import, spec checks). Both change *where skills come from* or *how they are managed*.
+
+This plugin changes **what a skill is called at a glance**: a caption you control (four override levels, live file reload), applied to both the model-facing catalog and the `/` menu, and maintainable by the agent through `skill_labels`.
 
 ## Installation
 
@@ -92,6 +99,22 @@ Row configuration:
 | `labels` | object | `{}` | Caption by skill name, highest priority |
 | `labelsFile` | string \| false | `~/.dsh/skill-labels.json` | Path to the private table; `false` disables it |
 
+Captions are just prefix strings, so emoji or short English names work too:
+
+```json
+{ "html-ppt": "🎨 draw", "office-xlsx": "excel", "my-own-skill": "① daily" }
+```
+
+## Let the agent fill in captions
+
+Writing JSON by hand is tedious, so the plugin ships a **`skill_labels` tool** (available once DSH restarts, since tools are registered at plugin activation). Just ask in plain language:
+
+> Find the skills that have no caption yet and label them all — keep each caption short, 4–7 characters, so the purpose is obvious at a glance.
+
+The model then calls `skill_labels { action: "list" }` to get existing captions, their source (`builtin` / `package` / `user` / `config`) and the list of unlabelled skills (with descriptions), and `skill_labels { action: "set", labels: { … } }` to merge new captions into `~/.dsh/skill-labels.json`. The new captions apply on the next catalog read — no restart, no manual editing.
+
+Writes are deliberately conservative: **merge, never replace**; **atomic** (temp file + rename); **one file only** (the label table); **a corrupt table refuses the write** instead of overwriting your data; invalid entries are skipped and reported.
+
 ## How it works
 
 Every consumer of the skill catalog goes through one seam: `SkillRegistry.snapshot()` / `list()` from `@deepseek-ai/dsh-skill`.
@@ -127,8 +150,9 @@ The plugin wraps those two methods on the registry **prototype** and rewrites ea
 ## Security and privacy
 
 - **Network**: no requests, no telemetry, no reporting.
-- **Filesystem**: reads two optional JSON label tables; writes nothing.
-- **Session and prompts**: no session events appended, no prompt injection, no tools registered; the plugin only rewrites strings on the way out of the skill registry.
+- **Filesystem**: two optional JSON label tables are read; the only write happens when you or the model calls `skill_labels { action: "set" }`, and it touches that one file (temp file + rename).
+- **Session and prompts**: no session events appended and no prompt injection; the catalog is rewritten at read time.
+- **Tools**: exactly one tool (`skill_labels`) that only reads/writes the label table.
 
 ## Known limitations
 
