@@ -44,6 +44,10 @@ DeepSeek Harness 的技能目录有两个出口：一是模型在会话中看到
 
 ## 效果
 
+输入框 `/` 菜单里的实际效果（同一份目录数据，模型侧与菜单侧一致）：
+
+![技能菜单中的中文标题](docs/skills-menu.png)
+
 | | 技能名 | 描述 |
 |---|---|---|
 | 安装前 | `html-ppt` | HTML PPT Studio — author professional static HTML presentations in many styles, layouts, and animations … |

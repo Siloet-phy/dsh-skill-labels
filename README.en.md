@@ -24,6 +24,8 @@ DeepSeek Harness exposes skills through two surfaces: the `available_skills` cat
 
 This plugin prepends a 4–7 character Chinese caption to each skill description, so a skill reads as `【写Excel】Read, create, and modify Excel workbooks (.xlsx) …`. The original English description is preserved verbatim: its trigger wording is what the model uses to select a skill.
 
+![Chinese captions in the / menu](docs/skills-menu.png)
+
 | | Skill | Description |
 |---|---|---|
 | Before | `html-ppt` | HTML PPT Studio — author professional static HTML presentations in many styles, layouts, and animations … |
