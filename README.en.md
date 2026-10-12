@@ -115,6 +115,23 @@ The model then calls `skill_labels { action: "list" }` to get existing captions,
 
 Writes are deliberately conservative: **merge, never replace**; **atomic** (temp file + rename); **one file only** (the label table); **a corrupt table refuses the write** instead of overwriting your data; invalid entries are skipped and reported.
 
+## Captioning GitHub / third-party skills
+
+The plugin is **source-agnostic**: captions match by **name**, so bundled skills, workspace `.dsh/skills`, user-level `~/.dsh/skills`, and skills installed from GitHub all get captioned as soon as the name is in a table. **No GitHub-specific code is involved.**
+
+Two steps for any new skill:
+
+1. **Get the name** — press `/` after installing, or have the model call `skill_labels { action: "list" }` for the unlabelled list (e.g. `dig`, `pdf`, `skill-creator`).
+2. **Add it to your user table** `~/.dsh/skill-labels.json` (survives upgrades, effective immediately):
+
+```json
+{ "dig": "挖简历亮点", "pdf": "读PDF" }
+```
+
+> **Boundary: the built-in table is public defaults only.**
+> `DEFAULT_LABELS` in `index.js` carries **generic DSH-ecosystem skills** (bundled and common plugins) and ships to everyone.
+> Captions for **your own skills or a third-party / GitHub skill set belong in your user table** — please don't PR them into the built-in table; that table is a shared default, not a personal label store.
+
 ## How it works
 
 Every consumer of the skill catalog goes through one seam: `SkillRegistry.snapshot()` / `list()` from `@deepseek-ai/dsh-skill`.
