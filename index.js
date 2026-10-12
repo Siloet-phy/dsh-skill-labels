@@ -63,6 +63,12 @@ export const DEFAULT_LABELS = {
   'cordis-plugin-development': '写DSH插件',
   'cordis-composition-reference': '查DSH配置',
   'editing-cordis-compositions': '改DSH配置',
+  // 简历五件套（~/.dsh/skills 或任意来源）——标签按名字匹配，与技能来源无关
+  'dig': '挖简历亮点',
+  'format': '简历套模板',
+  'generate': '生成简历',
+  'polish': '润色简历',
+  'review': '点评简历',
 }
 
 /** 在原型链上找到第一个自己拥有 key 的对象；找不到返回 undefined。 */

@@ -39,7 +39,7 @@ This plugin prepends a 4–7 character Chinese caption to each skill description
 - **The agent can label skills for you** — a bundled `skill_labels` tool lets the model list what is still unlabelled and write captions into your user table. No comparable plugin does this.
 - **Not limited to Chinese** — a caption is just a prefix string: emoji, short English names, or numbering work too (`🎨 draw`, `excel`, `① daily`).
 - **Zero dependencies, zero configuration** — no third-party packages, no peer dependencies, no build step, enabled by default once installed.
-- **Unregistered skills untouched** — a skill absent from every table is left exactly as it was; a single debug line records it in the host log.
+- **Source-agnostic** — captions match by **name**, not origin: bundled skills, workspace `.dsh/skills`, user-level `~/.dsh/skills`, or skills installed from GitHub all get captioned as long as the name is in a table; anything not listed stays untouched (one debug line in the host log).
 - **Safe to remove** — uninstalling restores the wrapped registry methods and returns the catalog to its previous state.
 
 ## How it differs
