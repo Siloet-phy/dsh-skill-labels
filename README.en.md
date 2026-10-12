@@ -115,7 +115,7 @@ The model then calls `skill_labels { action: "list" }` to get existing captions,
 
 Writes are deliberately conservative: **merge, never replace**; **atomic** (temp file + rename); **one file only** (the label table); **a corrupt table refuses the write** instead of overwriting your data; invalid entries are skipped and reported.
 
-## Captioning GitHub / third-party skills
+## Captioning GitHub and third-party skills
 
 The plugin is **source-agnostic**: captions match by **name**, so bundled skills, workspace `.dsh/skills`, user-level `~/.dsh/skills`, and skills installed from GitHub all get captioned as soon as the name is in a table. **No GitHub-specific code is involved.**
 
